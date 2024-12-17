@@ -3,29 +3,39 @@ import './App.css'
 import './styles.scss'
 import Type from './Type.jsx'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
- 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   return (
     <>
     <div className='main'> 
-        <div className="navbar">
-        <nav>
-            <ul className='text-xl  md:text-2xl lg:text-2xl '>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
+    <div className="navbar">
+      <nav>
+        <div className="hamburger" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
+        <ul className={menuOpen ? 'active' : ''}>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
 
    {/* --------------------------------------------------------------------------------- */}
-      <div id='home' className='flex items-center    w-full h-screen   p-5  '>
+      {/* <div id='home' className='flex  items-center    w-full h-screen   p-5  '>
         <div className='font-bold p-8 '>
-        <h1 className='font-mono text-3xl md:text-5xl sm:text-4xl lg:text-7xl'> HI
+        <h1 className='font-mono  md:text-5xl sm:text-4xl lg:text-7xl'> HI
         <span className="wave " role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
@@ -34,11 +44,51 @@ function App() {
       bg-clip-text text-transparent '> 
         <Type />
         </h1>
+        <div className='flex  mt-5 pb-5 gap-5 '>
+            <span className='bg-orange-500  p-2 rounded text-white cursor-pointer'><a href="https://github.com/ikdaisy"><img src="./github (2).png" className='w-7'alt="" /></a></span>
+            <span className='bg-orange-500  p-2 rounded text-white cursor-pointer'><a href="https://www.linkedin.com/in/safa-kallianthodi-392753294/"><img src="./linkedin.png" className='w-6'alt="" /></a></span>
+           
+            
+
+          </div>
+        
         </div>
-        <div className=' w-1/2'>
+        <div className=' w-1/2 '>
           <img  className="w-96 md:w-96 sm:w-96 lg:w-96  ring-orange-500 border p-2   rounded-xl" src="./giphy.webp" alt="" />
         </div>
-      </div>
+      </div> */}
+
+<div id='home' className='flex items-center w-full h-screen p-5 flex-col lg:flex-row'>
+  <div className='font-bold p-8 text-center lg:text-left'>
+    <h1 className='font-mono text-4xl sm:text-5xl lg:text-7xl'>
+      HI
+      <span className="wave" role="img" aria-labelledby="wave">
+        👋🏻
+      </span>
+      , IM SAFA KALLIANTHODI
+    </h1>
+    <h1 className='text-xl sm:text-3xl md:text-4xl lg:text-7xl bg-gradient-to-r from-orange-500 to-white bg-clip-text text-transparent'>
+      <Type />
+    </h1>
+    <div className='flex justify-center lg:justify-start mt-5 pb-5 gap-5'>
+      <span className='bg-orange-500 p-2 rounded text-white cursor-pointer'>
+        <a href="https://github.com/ikdaisy">
+          <img src="./github (2).png" className='w-7' alt="GitHub" />
+        </a>
+      </span>
+      <span className='bg-orange-500 p-2 rounded  cursor-pointer'>
+        <a href="https://www.linkedin.com/in/safa-kallianthodi-392753294/">
+          <img src="./linkedin.png" className='w-6' alt="LinkedIn" />
+        </a>
+      </span>
+    </div>
+  </div>
+  
+  <div className='w-full lg:w-1/2 flex justify-center'>
+    <img className="w-96 sm:w-96 md:w-96 lg:w-96 ring-orange-500 border p-2 rounded-xl" src="./giphy.webp" alt="Safa Kalliandothi" />
+  </div>
+</div>
+
       {/* ----------------------- ABOUT ME STARTS HERE----------------- */}
       <div className="flex justify-center gap-12" >
           <div className='bg-orange-500 rounded-full text-sm text-orange-500 animate-bounce'>01</div>
@@ -57,7 +107,7 @@ function App() {
      <p className='p-4 h-60  sm:w-30  shadow-md shadow-orange-500   '>
      <div className='flex   mt-5'>
      <img src="./email (1).png" alt="" className='w-7 me-2' />
-     <span className=''> safakallianthodi6@gmail.com</span>
+     <span className='email'> safakallianthodi6@gmail.com</span>
      </div>
 
      <div className='flex mt-8'>
@@ -79,30 +129,31 @@ function App() {
           <div className='bg-orange-500 rounded-full text-sm text-orange-500 animate-bounce'>02</div>
     </div>
     {/* ---------------SKILL SET STARTS HERE------------- */}
-    <div className='bg-black  h-screen'>
-      <h2 className='text-5xl text-center font-mono mt-12 mb-8 font-bold tracking-widest ' id='skills'>SKILLSET</h2>
-      <div className='grid grid-cols-4 p-4 justify-items-center gap-6 md:grid-cols-3 lg:grid-cols-4'>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./js (1).png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./science.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./express.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./node-js (2).png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./mongodb.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./html-5.png" alt="" /></div>
-      <div className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./css-3.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./vitejs.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./bootstrap.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./postgresql.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./tailwind-css.png" alt="" /></div>
-      <div  className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./sass.png" alt="" /></div>
-
-
-      </div>
+    <div className='bg-black'>
+  <h2 className='text-5xl text-center font-mono mt-12 mb-8 font-bold tracking-widest' id='skills'>SKILLSET</h2>
+  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 justify-items-center'> 
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./js (1).png" alt="" /></div>
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./science.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./express.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./node-js (2).png" alt="" /></div>
+    <div className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./mongodb.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./html-5.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./css-3.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-sm shadow-orange-500 p-2'><img src="./api.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./bootstrap.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./postgresql.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./tailwind-css.png" alt="" /></div>
+    <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./sass.png" alt="" /></div>
+  </div>
       <div className="flex justify-center  mt-12  gap-12">
           <div className='bg-orange-500 rounded-full text-sm text-orange-500 animate-bounce'>01</div>
           <div className='bg-orange-500 rounded-full text-sm text-orange-500 animate-bounce'>03</div>
           <div className='bg-orange-500 rounded-full text-sm text-orange-500 animate-bounce'>02</div>
     </div>
     </div>
+
+    {/* ========================== */}
+   
     
     {/* -------------------------- PROJECTS STARTS HERE--------------------------------------- */}
 
@@ -162,8 +213,7 @@ data.
           <div className='flex justify-center mt-5 pb-5 gap-5 '>
             <span className='bg-orange-500  p-2 rounded-full text-white cursor-pointer'><a href="https://github.com/ikdaisy"><img src="./github (2).png" className='w-7'alt="" /></a></span>
             <span className='bg-orange-500  p-2 rounded-full text-white cursor-pointer'><a href="https://www.linkedin.com/in/safa-kallianthodi-392753294/"><img src="./linkedin.png" className='w-6'alt="" /></a></span>
-            <span className='bg-orange-500  p-2 rounded-full text-white cursor-pointer'><img src="./instagram (3).png" className='w-7'alt="" /></span>
-            <span className='bg-orange-500  p-2 rounded-full text-white cursor-pointer'><img src="./facebook-app-symbol.png" className='w-7'alt="" /></span>
+           
             
 
           </div>
