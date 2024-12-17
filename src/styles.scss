@@ -1,7 +1,7 @@
 // NAVIGATION
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@400..700&family=Funnel+Display:wght@300..800&family=Parkinsans:wght@300..800&family=Potta+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Bebas+Neue&family=Caveat:wght@400..700&family=Funnel+Display:wght@300..800&family=Parkinsans:wght@300..800&family=Potta+One&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Funnel+Display:wght@300..800&family=Parkinsans:wght@300..800&family=Potta+One&display=swap');
 .main{
@@ -63,6 +63,10 @@
   // {
   //     transform: scaleX(1);
   // } 
+}
+
+ .main h2{
+  font-family: "Agu Display", serif;
 }
 
 .wave {
