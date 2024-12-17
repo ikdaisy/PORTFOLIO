@@ -131,7 +131,7 @@ function App() {
     {/* ---------------SKILL SET STARTS HERE------------- */}
     <div className='bg-black'>
   <h2 className='text-5xl text-center font-mono mt-12 mb-8 font-bold tracking-widest' id='skills'>SKILLSET</h2>
-  <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 justify-items-center'> 
+  <div className='grid grid-cols-2  sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 justify-items-center'> 
     <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./js (1).png" alt="" /></div>
     <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./science.png" alt="" /></div>
     <div className='w-28 h-28 shadow-md shadow-orange-500 p-2'><img src="./express.png" alt="" /></div>
